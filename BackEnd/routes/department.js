@@ -4,7 +4,7 @@ import {  addDepartment,
       getDepartmentById,
       updateDepartment,
       deleteDepartment } from '../controllers/departmentController.js';
-import authMiddleware from '../middleware/authMiddleware.js'; // ✅ Uncommented
+import {protect} from '../middleware/authMiddleware.js'; // ✅ Uncommented
 
 
 const router = express.Router();

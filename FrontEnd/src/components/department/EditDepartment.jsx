@@ -16,7 +16,7 @@ const EditDepartment = () => {
         const fetchDepartment = async () => {
             setDepLoading(true);
             try {
-                const response = await axios.get(`http://localhost:5000/api/department/${id}`, {
+                const response = await axios.get(`http://localhost:5007/api/department/${id}`, {
                     headers: {
                         "Authorization": `Bearer ${localStorage.getItem('token')}`
                     }
@@ -66,16 +66,16 @@ const EditDepartment = () => {
     return (
         <>
             {depLoading ? (
-                <div>Loading....</div>
+                <div className="text-white text-2xl font-bold">Loading....</div>
             ) : (
-                <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-600 to-blue-400">
-                    <div className="bg-white p-8 rounded-2xl shadow-lg w-96 font-[Poppins]">
-                        <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
+                <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] px-4">
+                    <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 sm:p-10 w-full max-w-md shadow-2xl animate-fade-in text-white font-[Poppins]">
+                        <h2 className="text-2xl font-bold text-center text-gray-200 mb-6">
                             Edit Department
                         </h2>
                         <form onSubmit={handleSubmit} className="space-y-4">
                             <div>
-                                <label htmlFor="dep_name" className="block text-gray-700 font-semibold">
+                                <label htmlFor="dep_name" className="block text-gray-200 font-semibold">
                                     Department Name
                                 </label>
                                 <input
@@ -84,12 +84,12 @@ const EditDepartment = () => {
                                     onChange={handleChange}
                                     value={department.dep_name}
                                     placeholder="Department Name"
-                                    className="w-full mt-1 p-3 border rounded-lg focus:ring-2 focus:ring-purple-400 outline-none"
+                                    className="w-full mt-1 p-3 bg-white/10 text-white border border-white/30 rounded-lg focus:ring-2 focus:ring-pink-500 outline-none placeholder-gray-300"
                                     required
                                 />
                             </div>
                             <div>
-                                <label htmlFor="description" className="block text-gray-700 font-semibold">
+                                <label htmlFor="description" className="block text-gray-200 font-semibold">
                                     Description
                                 </label>
                                 <textarea
@@ -97,11 +97,11 @@ const EditDepartment = () => {
                                     onChange={handleChange}
                                     value={department.description}
                                     placeholder="Description"
-                                    className="w-full mt-1 p-3 border rounded-lg focus:ring-2 focus:ring-purple-400 outline-none"
+                                    className="w-full mt-1 p-3 bg-white/10 text-white border border-white/30 rounded-lg focus:ring-2 focus:ring-pink-500 outline-none placeholder-gray-300"
                                     rows="4"
                                 ></textarea>
                             </div>
-                            <button type="submit" className="w-full bg-purple-600 text-white p-3 rounded-lg font-semibold hover:bg-purple-700 transition-all">
+                            <button type="submit" className="w-full bg-gradient-to-r from-pink-500 via-indigo-500 to-purple-600 hover:brightness-110 text-white font-semibold rounded-lg p-3 transition duration-300 shadow-md">
                                 Edit Department
                             </button>
                         </form>

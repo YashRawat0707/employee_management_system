@@ -58,59 +58,86 @@ function Edit() {
   };
 
   return (
-    <div className="max-w-xl mx-auto p-6 bg-white shadow-md rounded-lg mt-8">
-      <h2 className="text-2xl font-semibold text-gray-800 mb-4">Edit Employee</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label className="block mb-1 text-gray-600 font-medium">Image URL</label>
-          <input
-            type="text"
-            name="image"
-            value={form.image}
-            onChange={handleChange}
-            placeholder="https://example.com/photo.jpg"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-300"
-          />
-        </div>
-        <div>
-          <label className="block mb-1 text-gray-600 font-medium">Name</label>
-          <input
-            type="text"
-            name="name"
-            value={form.name}
-            onChange={handleChange}
-            placeholder="John Doe"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-300"
-          />
-        </div>
-        <div>
-          <label className="block mb-1 text-gray-600 font-medium">Date of Birth</label>
-          <input
-            type="date"
-            name="dob"
-            value={form.dob}
-            onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-300"
-          />
-        </div>
-        <div>
-          <label className="block mb-1 text-gray-600 font-medium">Department</label>
-          <input
-            type="text"
-            name="department"
-            value={form.department}
-            onChange={handleChange}
-            placeholder="Marketing / Sales / HR"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-300"
-          />
-        </div>
-        <button
-          type="submit"
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md font-medium"
-        >
-          Update Employee
-        </button>
-      </form>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] px-4">
+      <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 sm:p-10 w-full max-w-md shadow-2xl animate-fade-in text-white font-[Poppins]">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-6 bg-gradient-to-r from-indigo-400 via-pink-500 to-purple-500 bg-clip-text text-transparent">
+          Edit Employee
+        </h2>
+
+        <form onSubmit={handleSubmit} className="space-y-5">
+          {/* Image URL */}
+          <div>
+            <label htmlFor="image" className="block text-sm font-medium text-gray-200">
+              Image URL
+            </label>
+            <input
+              type="text"
+              id="image"
+              name="image"
+              value={form.image}
+              onChange={handleChange}
+              placeholder="https://example.com/photo.jpg"
+              className="mt-1 w-full p-3 bg-white/10 text-white border border-white/30 rounded-lg focus:ring-2 focus:ring-pink-500 outline-none placeholder-gray-300"
+            />
+          </div>
+
+          {/* Name */}
+          <div>
+            <label htmlFor="name" className="block text-sm font-medium text-gray-200">
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={form.name}
+              onChange={handleChange}
+              placeholder="John Doe"
+              required
+              className="mt-1 w-full p-3 bg-white/10 text-white border border-white/30 rounded-lg focus:ring-2 focus:ring-pink-500 outline-none placeholder-gray-300"
+            />
+          </div>
+
+          {/* Date of Birth */}
+          <div>
+            <label htmlFor="dob" className="block text-sm font-medium text-gray-200">
+              Date of Birth
+            </label>
+            <input
+              type="date"
+              id="dob"
+              name="dob"
+              value={form.dob}
+              onChange={handleChange}
+              className="mt-1 w-full p-3 bg-white/10 text-white border border-white/30 rounded-lg focus:ring-2 focus:ring-pink-500 outline-none placeholder-gray-300"
+            />
+          </div>
+
+          {/* Department */}
+          <div>
+            <label htmlFor="department" className="block text-sm font-medium text-gray-200">
+              Department
+            </label>
+            <input
+              type="text"
+              id="department"
+              name="department"
+              value={form.department}
+              onChange={handleChange}
+              placeholder="Marketing / Sales / HR"
+              className="mt-1 w-full p-3 bg-white/10 text-white border border-white/30 rounded-lg focus:ring-2 focus:ring-pink-500 outline-none placeholder-gray-300"
+            />
+          </div>
+
+          {/* Submit Button */}
+          <button
+            type="submit"
+            className="w-full py-3 bg-gradient-to-r from-pink-500 via-indigo-500 to-purple-600 hover:brightness-110 text-white font-semibold rounded-lg transition duration-300 shadow-md"
+          >
+            Update Employee
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
